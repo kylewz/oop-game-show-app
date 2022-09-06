@@ -6,4 +6,12 @@ class Phrase {
   constructor(phrase) {
     this.phrase = phrase.toLowerCase();
   }
+
+  addPhraseToDisplay() {
+    let phraseLettersArray = this.phrase.split('');
+    console.log(phraseLettersArray);
+
+    const phraseElementList =
+      document.getElementById('phrase').firstElementChild;
+  }
 }

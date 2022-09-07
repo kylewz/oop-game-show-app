@@ -13,5 +13,13 @@ class Phrase {
 
     const phraseElementList =
       document.getElementById('phrase').firstElementChild;
+
+    let phraseCharacterHTML = '';
+
+    for (const letter of phraseLettersArray) {
+      phraseCharacterHTML += `<li class="hide letter ${letter}">${letter}</li>`;
+    }
+
+    phraseElementList.insertAdjacentHTML('beforeend', phraseCharacterHTML);
   }
 }

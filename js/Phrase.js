@@ -27,4 +27,8 @@ class Phrase {
 
     phraseElementList.insertAdjacentHTML('beforeend', phraseDisplayHTML);
   }
+
+  checkLetter(guessedLetter) {
+    return this.phrase.includes(guessedLetter);
+  }
 }

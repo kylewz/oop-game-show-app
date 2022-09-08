@@ -8,18 +8,23 @@ class Phrase {
   }
 
   addPhraseToDisplay() {
-    let phraseLettersArray = this.phrase.split('');
-    console.log(phraseLettersArray);
+    let phraseCharactersArray = this.phrase.split('');
+    const whiteSpace = /\s/;
+    console.log(phraseCharactersArray);
 
     const phraseElementList =
       document.getElementById('phrase').firstElementChild;
 
-    let phraseCharacterHTML = '';
+    let phraseDisplayHTML = '';
 
-    for (const letter of phraseLettersArray) {
-      phraseCharacterHTML += `<li class="hide letter ${letter}">${letter}</li>`;
+    for (const char of phraseCharactersArray) {
+      if (whiteSpace.test(char)) {
+        phraseDisplayHTML += `<li class="space">${char}</li>`;
+      } else {
+        phraseDisplayHTML += `<li class="hide letter ${char}">${char}</li>`;
+      }
     }
 
-    phraseElementList.insertAdjacentHTML('beforeend', phraseCharacterHTML);
+    phraseElementList.insertAdjacentHTML('beforeend', phraseDisplayHTML);
   }
 }

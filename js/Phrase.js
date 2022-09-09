@@ -32,5 +32,11 @@ class Phrase {
     return this.phrase.includes(guessedLetter);
   }
 
-  showMatchedLetter(guessedLetter) {}
+  showMatchedLetter(guessedLetter) {
+    let matchedLetters = document.getElementsByClassName(guessedLetter);
+
+    for (let letter of matchedLetters) {
+      letter.classList.replace('hide', 'show');
+    }
+  }
 }

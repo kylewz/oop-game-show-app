@@ -7,3 +7,5 @@ let guessPhrase = new Phrase('Hello there');
 console.log(guessPhrase);
 
 guessPhrase.addPhraseToDisplay();
+
+guessPhrase.showMatchedLetter('e');

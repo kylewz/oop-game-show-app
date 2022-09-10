@@ -9,3 +9,5 @@ console.log(guessPhrase);
 guessPhrase.addPhraseToDisplay();
 
 guessPhrase.showMatchedLetter('e');
+
+let newGame = new Game();

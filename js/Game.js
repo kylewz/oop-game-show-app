@@ -26,6 +26,8 @@ class Game {
     startOverlay.style.visibility = 'hidden';
 
     this.activePhrase = this.getRandomPhrase();
+
+    this.activePhrase.addPhraseToDisplay();
   }
 
   getRandomPhrase() {

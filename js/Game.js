@@ -20,4 +20,16 @@ class Game {
     ];
     this.activePhrase = null;
   }
+
+  startGame() {
+    let startOverlay = document.getElementById('overlay');
+    startOverlay.style.visibility = 'hidden';
+
+    this.activePhrase = this.getRandomPhrase();
+  }
+
+  getRandomPhrase() {
+    const randomNum0to4 = Math.floor(Math.random() * 5);
+    return this.phrases[randomNum0to4];
+  }
 }

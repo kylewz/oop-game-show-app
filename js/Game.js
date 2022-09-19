@@ -36,10 +36,6 @@ class Game {
   }
 
   handleInteraction(guessedLetter) {
-    if (this.activePhrase.checkLetter(guessedLetter)) {
-      console.log('Phrase has the letter');
-    } else {
-      console.log('No such letter');
-    }
+    const guessResult = this.activePhrase.checkLetter(guessedLetter);
   }
 }

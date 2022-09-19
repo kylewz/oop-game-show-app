@@ -34,4 +34,12 @@ class Game {
     const randomNum0to4 = Math.floor(Math.random() * 5);
     return this.phrases[randomNum0to4];
   }
+
+  handleInteraction(guessedLetter) {
+    if (this.activePhrase.checkLetter(guessedLetter)) {
+      console.log('Phrase has the letter');
+    } else {
+      console.log('No such letter');
+    }
+  }
 }

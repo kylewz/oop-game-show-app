@@ -45,10 +45,24 @@ class Game {
 
         if (guessIsCorrect) {
           key.classList.add('chosen');
+
+          this.activePhrase.showMatchedLetter(guessedLetter);
+
+          if (this.checkForWin()) {
+            this.gameOver();
+          }
         } else {
           console.log('WRONG');
         }
       }
     }
+  }
+
+  checkForWin() {
+    return true;
+  }
+
+  gameOver() {
+    console.log('Game over man, game over!');
   }
 }

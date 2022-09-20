@@ -36,6 +36,19 @@ class Game {
   }
 
   handleInteraction(guessedLetter) {
-    const guessResult = this.activePhrase.checkLetter(guessedLetter);
+    const displayKeyboardKeys = document.querySelectorAll('.key');
+    const guessIsCorrect = this.activePhrase.checkLetter(guessedLetter);
+
+    for (let key of displayKeyboardKeys) {
+      if (key.textContent === guessedLetter) {
+        key.disabled = true;
+
+        if (guessIsCorrect) {
+          key.classList.add('chosen');
+        } else {
+          console.log('WRONG');
+        }
+      }
+    }
   }
 }

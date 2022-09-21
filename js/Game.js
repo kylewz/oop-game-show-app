@@ -11,6 +11,7 @@ const gameWinClass = 'win';
 const gameLoseClass = 'lose';
 const winMessage = 'You Did It!';
 const loseMessage = 'There Was An Attempt...';
+const lostHeartImg = 'images/lostHeart.png';
 let startOverlay = document.getElementById('overlay');
 
 class Game {
@@ -64,6 +65,13 @@ class Game {
 
   checkForWin() {
     return true;
+  }
+
+  removeLife() {
+    let hearts = document.querySelectorAll('.tries');
+    hearts[this.missed].firstElementChild.src = lostHeartImg;
+
+    this.missed++;
   }
 
   gameOver(winOrLose, endGameMessage) {

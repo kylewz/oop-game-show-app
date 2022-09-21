@@ -7,6 +7,11 @@ const phrase2 = 'Cowabunga Dude';
 const phrase3 = 'Come with me if you want to live';
 const phrase4 = 'Forgiveness is divine but never pay full price for late pizza';
 const phrase5 = 'I can do this all day';
+const gameWinClass = 'win';
+const gameLoseClass = 'lose';
+const winMessage = 'You Did It!';
+const loseMessage = 'There Was An Attempt...';
+let startOverlay = document.getElementById('overlay');
 
 class Game {
   constructor() {
@@ -22,7 +27,6 @@ class Game {
   }
 
   startGame() {
-    let startOverlay = document.getElementById('overlay');
     startOverlay.style.visibility = 'hidden';
 
     this.activePhrase = this.getRandomPhrase();
@@ -49,7 +53,7 @@ class Game {
           this.activePhrase.showMatchedLetter(guessedLetter);
 
           if (this.checkForWin()) {
-            this.gameOver();
+            this.gameOver(gameWinClass, winMessage);
           }
         } else {
           console.log('WRONG');
@@ -62,7 +66,12 @@ class Game {
     return true;
   }
 
-  gameOver() {
-    console.log('Game over man, game over!');
+  gameOver(winOrLose, endGameMessage) {
+    let gameOverMessageText = document.getElementById('game-over-message');
+
+    startOverlay.style.visibility = 'visible';
+    startOverlay.classList.replace('start', winOrLose);
+
+    gameOverMessageText.innerText = endGameMessage;
   }
 }

@@ -48,24 +48,23 @@ class Game {
     for (let key of displayKeyboardKeys) {
       if (key.textContent === guessedLetter) {
         key.disabled = true;
+        key.classList.add('chosen');
 
         if (guessIsCorrect) {
-          key.classList.add('chosen');
-
           this.activePhrase.showMatchedLetter(guessedLetter);
 
           if (this.checkForWin()) {
             this.gameOver(gameWinClass, winMessage);
           }
         } else {
-          console.log('WRONG');
+          this.removeLife();
         }
       }
     }
   }
 
   checkForWin() {
-    return true;
+    return document.getElementsByClassName('hide').length === 0;
   }
 
   removeLife() {

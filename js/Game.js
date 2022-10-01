@@ -64,7 +64,8 @@ class Game {
   }
 
   checkForWin() {
-    return document.getElementsByClassName('hide').length === 0;
+    const lettersStillHidden = document.getElementsByClassName('hide').length;
+    return lettersStillHidden === 0;
   }
 
   removeLife() {

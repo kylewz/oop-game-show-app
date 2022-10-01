@@ -48,16 +48,17 @@ class Game {
     for (let key of displayKeyboardKeys) {
       if (key.textContent === guessedLetter) {
         key.disabled = true;
-        key.classList.add('chosen');
 
         if (guessIsCorrect) {
           this.activePhrase.showMatchedLetter(guessedLetter);
+          key.classList.replace('key', 'chosen');
 
           if (this.checkForWin()) {
             this.gameOver(gameWinClass, winMessage);
           }
         } else {
           this.removeLife();
+          key.classList.replace('key', 'wrong');
         }
       }
     }

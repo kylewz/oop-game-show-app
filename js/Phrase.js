@@ -10,7 +10,6 @@ class Phrase {
   addPhraseToDisplay() {
     let phraseCharactersArray = this.phrase.split('');
     const whiteSpace = /\s/;
-    console.log(phraseCharactersArray);
 
     const phraseElementList =
       document.getElementById('phrase').firstElementChild;

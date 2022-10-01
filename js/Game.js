@@ -51,14 +51,14 @@ class Game {
 
         if (guessIsCorrect) {
           this.activePhrase.showMatchedLetter(guessedLetter);
-          key.classList.replace('key', 'chosen');
+          key.classList.add('chosen');
 
           if (this.checkForWin()) {
             this.gameOver(gameWinClass, winMessage);
           }
         } else {
           this.removeLife();
-          key.classList.replace('key', 'wrong');
+          key.classList.add('wrong');
         }
       }
     }

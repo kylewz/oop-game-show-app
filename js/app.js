@@ -5,17 +5,17 @@
 const startGameButton = document.getElementById('btn__reset');
 const keyboard = document.getElementById('qwerty');
 const keyboardButtons = document.getElementsByClassName('key');
+const phraseElementList = document.getElementById('phrase').firstElementChild;
 let game = null;
 
 startGameButton.addEventListener('click', () => {
   if (game === null) {
     game = new Game();
-    game.startGame();
   } else {
     resetGame();
     game = new Game();
-    game.startGame();
   }
+  game.startGame();
 });
 
 keyboard.addEventListener('click', (e) => {
@@ -27,4 +27,5 @@ function resetGame() {
     key.className = 'key';
     key.disabled = false;
   }
+  phraseElementList.innerHTML = '';
 }

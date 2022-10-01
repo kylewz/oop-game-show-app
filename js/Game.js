@@ -5,7 +5,7 @@
 const phrase1 = 'Hello There';
 const phrase2 = 'Cowabunga Dude';
 const phrase3 = 'Come with me if you want to live';
-const phrase4 = 'Forgiveness is divine but never pay full price for late pizza';
+const phrase4 = 'Into the frying pan';
 const phrase5 = 'I can do this all day';
 const gameWinClass = 'win';
 const gameLoseClass = 'lose';
@@ -84,7 +84,7 @@ class Game {
     let gameOverMessageText = document.getElementById('game-over-message');
 
     startOverlay.style.visibility = 'visible';
-    startOverlay.classList.replace('start', winOrLose);
+    startOverlay.className = winOrLose;
 
     gameOverMessageText.innerText = endGameMessage;
   }

@@ -9,12 +9,10 @@ const phraseElementList = document.getElementById('phrase').firstElementChild;
 let game = null;
 
 startGameButton.addEventListener('click', () => {
-  if (game === null) {
-    game = new Game();
-  } else {
-    resetGame();
-    game = new Game();
+  if (game !== null) {
+    clearPreviousGame();
   }
+  game = new Game();
   game.startGame();
 });
 
@@ -22,10 +20,27 @@ keyboard.addEventListener('click', (e) => {
   game.handleInteraction(e.target.innerText);
 });
 
-function resetGame() {
+function resetKeyboard() {
   for (let key of keyboardButtons) {
     key.className = 'key';
     key.disabled = false;
   }
+}
+
+function clearPhraseHTML() {
   phraseElementList.innerHTML = '';
+}
+
+function restoreHearts() {
+  const hearts = document.getElementsByClassName('tries');
+
+  for (let heart of hearts) {
+    heart.firstElementChild.src = 'images/liveHeart.png';
+  }
+}
+
+function clearPreviousGame() {
+  resetKeyboard();
+  clearPhraseHTML();
+  restoreHearts();
 }

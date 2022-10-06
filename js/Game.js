@@ -2,7 +2,7 @@
  * Project 4 - OOP Game App
  * Game.js */
 
-// Pre-set phrases for the game to choose from
+// Five Pre-set phrases for the game to choose from
 const phrase1 = 'Hello There';
 const phrase2 = 'Cowabunga Dude';
 const phrase3 = 'Come with me if you want to live';

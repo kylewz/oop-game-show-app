@@ -81,7 +81,7 @@ class Game {
     return lettersStillHidden === 0;
   }
 
-  // Replace live heart with lost heart img, increment missed
+  // Replace live heart with lost heart img, increment missed counter
   // Ends game if num of misses equals or exceeds max num of tries
   removeLife() {
     let hearts = document.getElementsByClassName('tries');

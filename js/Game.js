@@ -19,9 +19,10 @@ const lostHeartImg = 'images/lostHeart.png';
 // Max times the player can incorrectly guess
 const numOfTries = document.querySelectorAll('.tries').length;
 
+// Variable to store the DOM game overlay element
 let startOverlay = document.getElementById('overlay');
 
-// Game object to control game variables and interactions
+// Game class to control game variables and interactions
 class Game {
   constructor() {
     this.missed = 0;

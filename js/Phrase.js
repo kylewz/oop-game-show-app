@@ -2,7 +2,8 @@
  * Project 4 - OOP Game App
  * Phrase.js */
 
-// Phrase class to handle add phrase to display, check and show letters
+// Phrase class to handle adding a phrase to display, check for matched letters
+// with user guess, and show matched letters in display
 class Phrase {
   constructor(phrase) {
     this.phrase = phrase.toLowerCase();

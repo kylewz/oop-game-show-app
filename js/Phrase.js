@@ -9,7 +9,8 @@ class Phrase {
     this.phrase = phrase.toLowerCase();
   }
 
-  // Add a phrase to the browser display
+  // Add a phrase to the browser display, differentiate between characters
+  // and whitespace, phrase letters hidden by default
   addPhraseToDisplay() {
     let phraseCharactersArray = this.phrase.split('');
     const whiteSpace = /\s/;

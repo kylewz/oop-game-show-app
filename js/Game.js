@@ -2,7 +2,8 @@
  * Project 4 - OOP Game App
  * Game.js */
 
-// Five Pre-set phrases for the game to choose from
+// Five Pre-set phrases for the game to choose from, at top here for quick
+// changing
 const phrase1 = 'Hello There';
 const phrase2 = 'Cowabunga Dude';
 const phrase3 = 'Come with me if you want to live';
@@ -76,7 +77,7 @@ class Game {
     }
   }
 
-  // Check if all phrases letter are revealed
+  // Check if all phrase's letters are revealed
   checkForWin() {
     const lettersStillHidden = document.getElementsByClassName('hide').length;
     return lettersStillHidden === 0;

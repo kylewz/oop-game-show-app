@@ -46,10 +46,10 @@ class Game {
     this.activePhrase.addPhraseToDisplay();
   }
 
-  // Choose random phrase from 5 phrases
+  // Choose random phrase from phrases array
   getRandomPhrase() {
-    const randomNum0to4 = Math.floor(Math.random() * 5);
-    return this.phrases[randomNum0to4];
+    const randomPhraseIndex = Math.floor(Math.random() * this.phrases.length);
+    return this.phrases[randomPhraseIndex];
   }
 
   // Game disables guessed keyboard letter, show letter for correct guess,

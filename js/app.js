@@ -2,6 +2,7 @@
  * Project 4 - OOP Game App
  * app.js */
 
+// Variables for handling event listeners and interaction
 const startGameButton = document.getElementById('btn__reset');
 const keyboard = document.getElementById('qwerty');
 const phraseElementList = document.getElementById('phrase').firstElementChild;
